@@ -1,184 +1,105 @@
-# 🧩 Math Adventure
+# 🏎️ Math Adventure
 
-**Turn math learning into an adventure.**
+**Turn math practice into an adventure.**
 
-Math Adventure is an open-source platform that helps parents create customized math games based on children's ages, mathematical abilities, and interests.
+A customizable math game project for children, designed for both interactive browser play and printable activities.
 
-Instead of simply generating worksheets, Math Adventure transforms learning objectives into different game experiences, available both as interactive web games and printable activities.
+[![Play online](https://img.shields.io/badge/Play-Online-d33b36)](https://lan5757.github.io/math-adventure/)
+[![Tests](https://github.com/Lan5757/math-adventure/actions/workflows/tests.yml/badge.svg)](https://github.com/Lan5757/math-adventure/actions/workflows/tests.yml)
 
-## 🎯 Our Vision
+**[Play Math Adventure](https://lan5757.github.io/math-adventure/) · [Racing Maze](https://lan5757.github.io/math-adventure/maze.html) · [Feedback](https://github.com/Lan5757/math-adventure/issues)**
 
-Every child learns differently and develops at a different pace.
+## About
 
-We want to help parents turn everyday math practice into engaging adventures that children actually enjoy.
+Math Adventure started with a simple idea: make arithmetic practice feel like a real game rather than another worksheet. Parents can customize activities according to a child's current mathematical abilities, and children can explore, solve problems and reach a goal.
 
-With Math Adventure, parents can choose:
+## First Game: Racing Maze
 
-1. **Learning Goals** — What mathematical skills should the child practice?
-2. **Game Themes** — What kind of adventure would the child enjoy?
-3. **Output Formats** — Should the game be played online or printed on paper?
+Find the route to the trophy by moving through neighboring cells whose equations have the target answer. Move up, down, left or right, explore branches, and backtrack when needed.
 
-The platform then generates games tailored to these choices.
+- Randomly generated mazes with a validated unique solution and dead ends.
+- Addition, subtraction and missing-number problems.
+- Arithmetic ranges up to 20, 50 or 100.
+- 4 × 4, 5 × 5 and 6 × 6 grids.
+- Adjustable difficulty and question types.
+- Worked examples, progressive hints and immediate visual feedback.
+- A4 printable worksheets and matching answer keys.
+- No child account required.
 
-## 🕹️ How It Works
+## How to Play
 
-### 1. Choose Mathematical Skills
+1. Open the online game and choose the desired settings.
+2. Read the target number and the worked example.
+3. Solve the neighboring equations and select a cell with the target answer.
+4. Follow the route to the trophy. Backtrack if a branch leads to a dead end.
+5. Generate another maze or print the current puzzle and its answer key.
 
-- Addition and subtraction
-- Missing numbers and unknowns
-- Reverse thinking
-- Number patterns
-- Logical reasoning
-- Multiplication and division
-- Fractions and more
+## Engineering
 
-### 2. Choose a Game Theme
+Built with HTML, CSS, JavaScript and SVG. Hosted with GitHub Pages.
 
-- 🏎️ Racing adventures
-- 🗺️ Treasure hunts
-- 🔢 Number mazes
-- 🚀 Space exploration
-- 🏰 Fantasy adventures
-- More themes to come!
+| File | Purpose |
+| --- | --- |
+| `index.html` | Website homepage |
+| `maze.html` | Interactive racing maze and printing |
+| `math-generator.js` | Arithmetic question generation and equivalent-question deduplication |
+| `maze-generator.js` | Maze generation and path validation |
+| `test-generators.cjs` | Automated generator tests |
+| `.github/workflows/tests.yml` | GitHub Actions workflow |
+| `AGENTS.md` | Project development guidelines |
+| `.agents/skills/math-adventure/SKILL.md` | Repository-level development skill |
 
-### 3. Choose an Output Format
+Run the generator tests locally with Node.js 22:
 
-- **Interactive Web Games** — Play, solve problems, and complete challenges in the browser.
-- **Printable Worksheets** — Generate beautifully designed A4 activities and answer sheets.
+```bash
+node test-generators.cjs
+```
 
-## ✨ What Makes Math Adventure Different?
+The tests check arithmetic correctness, numeric bounds, duplicate mathematical relationships, maze connectivity, unique solution paths and invalid inputs. Browser interaction and physical print quality also require separate checks.
 
-- **One Learning Goal, Multiple Games:** Turn the same mathematical concept into different game experiences.
-- **Personalized Difficulty:** Adapt activities to children's ages and current abilities.
-- **Beyond Basic Arithmetic:** Encourage unknown-number problems, reverse thinking, and logical reasoning.
-- **Play and Print:** Support both interactive browser games and high-quality printable activities.
-- **Correctness First:** Validate mathematical answers, game logic, maze paths, and printable layouts.
+## Roadmap
 
-## 🚀 Development Roadmap
+- [x] Interactive arithmetic maze
+- [x] Random question and maze generation
+- [x] Parent settings and hints
+- [x] A4 print layout and answer keys
+- [x] Automated generator tests
+- [ ] First tagged release and broader parent feedback
+- [ ] Improved learning progression and accessibility
+- [ ] Additional themes and game mechanics
+- [ ] Reusable game-generation components for new activities
 
-We will develop the platform incrementally, starting with one complete and reliable game before expanding into a reusable game-generation system.
+## Feedback and Contributions
 
-### V1.0 — Digital Math Maze
+Parents, educators and developers are welcome to suggest improvements via [GitHub Issues](https://github.com/Lan5757/math-adventure/issues). Please do not include children's names, photos or other identifying information.
 
-Our first complete game experience.
+## License
 
-- Generate customizable number mazes.
-- Configure mathematical operations and difficulty.
-- Include missing-number and reverse-thinking problems.
-- Ensure every generated maze has a valid solution.
-- Validate all mathematical answers.
-- Support interactive browser play.
-- Generate print-ready A4 worksheets and answer keys.
-
-**Initial target audience:** Children aged 5–6 who are learning addition and subtraction within 100.
-
-### V1.1 — Racing Adventure
-
-- Transform math problems into racing challenges.
-- Introduce checkpoints and rewards.
-- Support both interactive and printable versions.
-
-### V1.2 — Treasure Hunt
-
-- Generate treasure-hunting adventures.
-- Combine mathematical clues with exploration.
-- Introduce multi-step challenges and reverse thinking.
-
-### V2.0 — Shared Math Generation Engine
-
-Build a reusable engine that powers different games.
-
-- Reusable math question generation.
-- Configurable difficulty levels.
-- Shared answer validation.
-- Reusable game mechanics and themes.
-- Multiple output formats from the same learning content.
-
-### Future Development
-
-- Support more age groups and mathematical topics.
-- Add more game types and themes.
-- Improve parent customization.
-- Explore learning progress tracking.
-- Welcome community-created game templates.
-
-## 🛠️ Technology Stack
-
-The initial version will prioritize simplicity and accessibility.
-
-- HTML
-- CSS
-- JavaScript
-- SVG
-- GitHub Pages
-
-We will start with a lightweight web architecture and introduce additional technologies only when they provide clear value.
-
-## 🔒 Privacy by Design
-
-Children's privacy matters.
-
-The initial versions will:
-
-- Require no child accounts.
-- Avoid collecting children's personal information.
-- Work without a backend or user database.
-
-## 📍 Project Status
-
-**Early Development — Planning and MVP Implementation**
-
-This project is currently being developed. Features in the roadmap are planned, not yet released.
-
-## 🤝 Contributing
-
-Math Adventure is intended to grow with the help of parents, educators, and developers.
-
-Ideas for new games, educational activities, themes, and improvements are welcome.
-
-You can use GitHub Issues to share suggestions and report problems.
-
-## 📄 License
-
-A license has not been selected yet. Licensing information will be added before the first public release.
+The license is pending. A public repository does not by itself grant permission to reuse or redistribute its code. Licensing will be clarified before the first tagged release.
 
 ---
 
 # 中文介绍
 
-## 项目简介
+Math Adventure（数学冒险乐园）希望让孩子在游戏中练习数学，而不是单纯重复做题。家长可以按照孩子的实际数学能力调整内容和难度。
 
-Math Adventure（数学冒险乐园）是一个开源的儿童数学游戏生成平台。
+**[进入游戏网站](https://lan5757.github.io/math-adventure/) · [立即体验赛车迷宫](https://lan5757.github.io/math-adventure/maze.html)**
 
-家长可以根据孩子的年龄、数学能力和兴趣，选择不同的数学知识、游戏主题和输出形式，生成适合孩子的数学游戏。
+## 当前玩法：冠军赛车挑战
 
-我们不只是生成数学练习题，而是希望将同一数学知识转化为不同的游戏体验。
+计算相邻格子中的算式，只经过答案等于通行密码的格子，通过探索和返回找到通往终点奖杯的路线。
 
-## 核心使用流程
+- 支持 20、50、100 以内的加减法及未知数题。
+- 支持 4×4、5×5、6×6 迷宫和不同难度。
+- 随机生成关卡，验证数学正确性、等价题去重和唯一通关路线。
+- 提供示范题、分级提示、正确与错误的视觉反馈。
+- 支持网页互动、A4 打印和对应答案页。
+- 无需注册儿童账号。
 
-1. **选择数学能力：** 加减法、未知数、逆向思考、逻辑推理等。
-2. **选择游戏主题：** 赛车、寻宝、数字迷宫、太空冒险等。
-3. **选择输出形式：** 网页互动游戏或可打印的 A4 PDF。
-4. **生成游戏：** 自动生成题目、游戏内容和答案。
+## 项目理念与后续计划
 
-## 项目特色
+先把一种算术迷宫玩法做好，再根据真实试玩反馈扩展主题、教学难度和新玩法。数学正确性、游戏可解性、儿童体验和打印质量是项目的基本要求。
 
-- 同一数学知识可以转化成多种游戏玩法。
-- 根据孩子的年龄和数学水平调整难度。
-- 重视未知数、逆向思考和逻辑推理。
-- 同时支持网页互动和高质量纸质打印。
-- 自动验证数学答案和游戏逻辑。
+欢迎家长和开发者通过 [Issues](https://github.com/Lan5757/math-adventure/issues) 提出建议。反馈时请勿上传儿童个人信息。
 
-## 开发计划
-
-- **V1.0：数字迷宫** — 自定义题目、难度、互动玩法、打印和答案。
-- **V1.1：赛车冒险** — 将数学练习融入赛车挑战。
-- **V1.2：寻宝探险** — 将数学线索融入寻宝任务。
-- **V2.0：统一数学题目引擎** — 为不同游戏提供可复用的题目生成、难度控制和验证能力。
-- **未来：** 扩展年龄段、数学知识、游戏模板和家长自定义功能。
-
-## 项目理念
-
-让数学学习变得有趣，让游戏设计保持严谨，让更多家庭能够使用优质的数学游戏。
-
-**让每一次数学练习，都成为一次冒险！**
+目前项目处于首次正式版本发布前的试玩阶段，开源许可证待确定。
