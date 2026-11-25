@@ -5,6 +5,26 @@
 <title>数字赛车挑战 | Math Adventure</title>
 <style>
 :root{--ink:#253b40;--red:#c83236;--cream:#fff9ed;--green:#d9edc5;--line:#ded4c0;--muted:#5b6b67}*{box-sizing:border-box}body{margin:0;background:#f4efdf;color:var(--ink);font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",system-ui,sans-serif}button,select,input{font:inherit}button,select{cursor:pointer}button:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #126caa;outline-offset:3px}button:disabled{cursor:default;opacity:.5}a{color:inherit}header{max-width:1060px;margin:auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px}header a{text-decoration:none;font-weight:800}.brand{letter-spacing:.04em;color:#a62f31}main{max-width:1060px;margin:auto;padding:0 24px 30px}.hero{position:relative;overflow:hidden;background:#f9dca8;border:1px solid #e4c58f;border-radius:24px;min-height:165px;display:flex;align-items:center;padding:24px 30px;margin-bottom:18px}.hero-copy{position:relative;z-index:1;max-width:64%}.eyebrow{font-size:11px;letter-spacing:.16em;font-weight:900;color:#a13f2e}h1{font-size:clamp(25px,4vw,40px);line-height:1.15;margin:7px 0 9px;color:#9f272c}p{margin:0;line-height:1.6}.hero p{font-size:14px}.hero-art{position:absolute;right:0;bottom:0;width:47%;height:100%}.layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:18px;align-items:start}.panel{background:#fffdf7;border:1px solid var(--line);border-radius:21px;padding:20px;box-shadow:0 4px 0 #e2d8c3}.mission{display:flex;align-items:center;gap:15px;margin-bottom:14px}.mission h2{font-size:20px;margin:0 0 5px}.mission p{font-size:14px;color:var(--muted)}.target{flex-shrink:0;text-align:center;background:var(--red);color:white;padding:9px 14px;border-radius:14px;min-width:79px}.target small{display:block;font-size:11px}.target strong{font-size:34px;line-height:1.15}.guide{background:#f8efd9;border-radius:12px;padding:11px 13px;margin:0 0 15px;font-size:14px}.guide b{color:#8a482c}.board{display:grid;gap:5px;background:#cfcebe;border:5px solid #cfcebe;border-radius:14px;position:relative}.cell{position:relative;min-width:0;aspect-ratio:1.24;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;border:1px solid #e8e0d0;border-radius:8px;background:#fffefa;color:var(--ink);padding:3px 1px;touch-action:manipulation;transition:background .15s,box-shadow .15s}.cell .eq{font-weight:750;font-size:clamp(11px,2vw,19px);line-height:1.2;white-space:nowrap;letter-spacing:-.035em}.cell .mark{height:23px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#426e36}.cell .mark svg{width:36px;height:23px}.cell .mark:empty{display:none}.cell.next{box-shadow:inset 0 0 0 2px #b9a77e}.cell.trail{background:var(--green);border-color:#9ab681}.cell.current{background:var(--green);box-shadow:inset 0 0 0 3px #43813c;border-color:#43813c}.cell.current.start{background:#e4eef7;box-shadow:inset 0 0 0 3px #44729a;border-color:#44729a}.cell.wrong{background:#fce1df;box-shadow:inset 0 0 0 2px #c83236;border-color:#c83236}.cell .result{font-size:14px;font-weight:900;line-height:1;color:#32682c}.cell.wrong .result{color:#ac292b}.cell.goal .mark{color:#87611d}.cell:hover:not(:disabled){filter:brightness(.97)}.board[data-size="5"] .eq{font-size:clamp(10px,1.65vw,16px)}.board[data-size="6"] .eq{font-size:clamp(9px,1.45vw,14px)}.board[data-size="6"] .cell{aspect-ratio:1.04}.legend{display:flex;gap:15px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:10px 0}.legend span{display:flex;align-items:center;gap:5px}.swatch{width:12px;height:12px;border-radius:3px;border:1px solid #a9a38e;background:#fffefa}.swatch.green{background:var(--green)}.swatch.red{background:#fce1df;border-color:var(--red)}.swatch.start{background:#e4eef7;border-color:#44729a}.feedback{background:#f5f0e3;border-radius:12px;padding:13px 14px;min-height:64px;font-size:15px;line-height:1.55}.feedback.win,.feedback.correct{background:#e3f1d6;color:#315d2e;font-weight:800}.feedback.incorrect{background:#fce1df;color:#a02e2e;font-weight:750}.hint{margin-top:7px;color:#8b4d20;font-size:14px}.controls{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}.btn{border:1px solid #c8bfad;border-radius:10px;background:white;color:var(--ink);padding:10px 13px;font-weight:750;min-height:42px}.primary{background:var(--red);color:white;border-color:var(--red)}.controls .btn{flex:1}.side h2{font-size:18px;margin:0 0 5px}.side p{font-size:13px;color:var(--muted)}label{display:block;font-size:13px;font-weight:750;margin:15px 0 6px}select{width:100%;padding:10px;border:1px solid #c8bfad;border-radius:9px;background:#fff;color:var(--ink)}.side .primary{width:100%;margin-top:18px}.side .note{margin-top:12px;font-size:12px}.stats{display:flex;justify-content:space-between;gap:6px;margin-top:18px;border-top:1px solid var(--line);padding-top:12px;font-size:12px;color:var(--muted)}.stats strong{display:block;color:var(--ink);font-size:21px}.error{color:#a02e2e;font-size:13px;margin-top:8px}footer{text-align:center;color:var(--muted);font-size:12px;margin-top:25px}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}@media(max-width:780px){.layout{grid-template-columns:1fr}.side{grid-row:2}.hero{padding:18px;min-height:140px}main{padding:0 12px 24px}header{padding:14px 12px}.panel{padding:13px}.cell .eq{font-size:clamp(11px,3.1vw,19px)}.board[data-size="5"] .eq{font-size:clamp(9px,2.6vw,16px)}.board[data-size="6"] .eq{font-size:clamp(8px,2.15vw,14px)}.board{gap:3px;border-width:3px}.hero-copy{max-width:70%}.hero-art{width:43%}.cell .mark{height:19px}.cell .mark svg{height:19px}.mission h2{font-size:17px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* Print the current puzzle independently of its on-screen progress. */
+.print-tools{border-top:1px solid var(--line);margin-top:18px;padding-top:14px}.print-tools h3{font-size:15px;margin:0 0 5px}.print-tools .btn{width:100%;margin-top:8px}.print-area{display:none}
+@page{size:A4 portrait;margin:12mm}
+@media print{
+ body{margin:0;background:white;color:#222;font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif}
+ body>header,body>main{display:none!important}.print-area{display:block}
+ .print-sheet{width:100%;max-width:180mm;margin:0 auto;break-inside:avoid;page-break-inside:avoid;font-size:12pt;line-height:1.45}
+ .print-sheet h1{font-size:24pt;color:#222;margin:0 0 2mm;line-height:1.2}.print-sheet .print-brand{font-size:10pt;font-weight:800;letter-spacing:.1em;color:#555;margin-bottom:3mm}
+ .print-head{display:flex;justify-content:space-between;align-items:center;gap:5mm;border-bottom:2px solid #333;padding-bottom:4mm;margin-bottom:4mm}
+ .print-target{border:2px solid #333;border-radius:3mm;min-width:28mm;text-align:center;padding:2mm;font-size:10pt;flex-shrink:0}.print-target strong{display:block;font-size:26pt;line-height:1.1}
+ .print-rule{margin:0 0 3mm}.print-example{font-size:11pt;margin:0 0 4mm;color:#444}.print-name{display:flex;justify-content:space-between;font-size:11pt;margin:0 0 4mm}
+ .print-grid{display:grid;gap:1mm;border:1.5px solid #333;padding:1mm;border-radius:2mm;break-inside:avoid}
+ .print-cell{border:1px solid #777;border-radius:1.5mm;min-width:0;height:34mm;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1mm;position:relative;white-space:nowrap;font-weight:700;font-size:16pt}
+ .print-grid[data-size="5"] .print-cell{height:29mm;font-size:13pt}.print-grid[data-size="6"] .print-cell{height:25mm;font-size:11pt}
+ .print-mark{display:flex;align-items:center;gap:1mm;font-size:9pt;font-weight:800}.print-mark svg{width:12mm;height:8mm;display:block}.print-grid[data-size="6"] .print-mark svg{width:9mm;height:6mm}
+ .print-cell .print-order{font-size:9pt;border:1px solid #222;border-radius:2mm;padding:0 1.5mm;font-weight:700}
+ .print-cell.solution{border:2px solid #263d27;background:#e4f0d7;print-color-adjust:exact;-webkit-print-color-adjust:exact}.print-cell.dead-end{border:2px dashed #777}.print-cell .print-answer{font-size:9pt;font-weight:400;color:#444}
+ .print-foot{margin-top:4mm;font-size:11pt;color:#333}.print-sheet p{line-height:1.5}.print-id{margin-top:3mm;font-size:9pt;color:#555;overflow-wrap:anywhere}
+}
 </style>
 </head>
 <body>
@@ -18,9 +38,10 @@
 <div class="legend"><span><i class="swatch start"></i>起点</span><span><i class="swatch green"></i>✓ 答对 / 已走路线</span><span><i class="swatch red"></i>× 答错</span><span><i class="swatch"></i>待探索</span></div>
 <div id="feedback" class="feedback" role="status" aria-live="polite"><div id="message">准备出发！</div><div id="hintText" class="hint" hidden></div></div>
 <div class="controls"><button class="btn" id="back">↶ 返回一步</button><button class="btn" id="hint">思考提示</button><button class="btn" id="restart">重玩本关</button></div>
-</section><aside class="panel side"><h2>家长设置</h2><p>选好设置后，生成一张全新的迷宫。</p><label for="max">算术范围</label><select id="max"><option value="20">20 以内</option><option value="50">50 以内</option><option value="100" selected>100 以内</option></select><label for="size">迷宫大小</label><select id="size"><option value="4" selected>4 × 4（推荐）</option><option value="5">5 × 5</option><option value="6">6 × 6</option></select><label for="difficulty">干扰答案难度</label><select id="difficulty"><option value="easy">简单 · 差距较大</option><option value="medium" selected>进阶 · 数字接近</option><option value="hard">挑战 · 优先相差 1–2</option></select><label for="types">算术题型</label><select id="types"><option value="all" selected>混合（含未知数）</option><option value="basic">基础加减法</option><option value="unknown">未知数</option></select><button class="btn primary" id="new">生成新迷宫</button><div id="error" class="error" role="alert" hidden></div><p class="note">建议先用 4 × 4。难度主要控制干扰答案，题量较大时建议使用 100 以内。</p><div class="stats"><div><strong id="steps">0</strong>当前路线步数</div><div><strong id="tries">0</strong>尝试次数</div></div></aside></div>
+</section><aside class="panel side"><h2>家长设置</h2><p>选好设置后，生成一张全新的迷宫。</p><label for="max">算术范围</label><select id="max"><option value="20">20 以内</option><option value="50">50 以内</option><option value="100" selected>100 以内</option></select><label for="size">迷宫大小</label><select id="size"><option value="4" selected>4 × 4（推荐）</option><option value="5">5 × 5</option><option value="6">6 × 6</option></select><label for="difficulty">干扰答案难度</label><select id="difficulty"><option value="easy">简单 · 差距较大</option><option value="medium" selected>进阶 · 数字接近</option><option value="hard">挑战 · 优先相差 1–2</option></select><label for="types">算术题型</label><select id="types"><option value="all" selected>混合（含未知数）</option><option value="basic">基础加减法</option><option value="unknown">未知数</option></select><button class="btn primary" id="new">生成新迷宫</button><div id="error" class="error" role="alert" hidden></div><div class="print-tools"><h3>纸质游戏</h3><p>打印当前关卡，不改变题目或在线进度。</p><button class="btn" id="printPuzzle" disabled>打印迷宫 / 保存 PDF</button><button class="btn" id="printAnswer" disabled>打印家长答案</button></div><p class="note">建议先用 4 × 4。难度主要控制干扰答案，题量较大时建议使用 100 以内。</p><div class="stats"><div><strong id="steps">0</strong>当前路线步数</div><div><strong id="tries">0</strong>尝试次数</div></div></aside></div>
 <footer>Math Adventure · 赛车迷宫测试版 · 无需登录</footer>
 </main>
+<div id="printArea" class="print-area" aria-hidden="true"></div>
 <script src="math-generator.js"></script><script src="maze-generator.js"></script>
 <script>
 (() => {
@@ -28,6 +49,7 @@
 const $=id=>document.getElementById(id);
 const car='<svg viewBox="0 0 48 27" aria-hidden="true"><path d="M2 13L11 10 18 2H32L39 10 46 14V21H2Z" fill="#cd3438" stroke="#9c272b"/><path d="M19 4H31L36 10H14Z" fill="#cde7ee"/><path d="M25 4V10" stroke="#9c272b" stroke-width="2"/><circle cx="11" cy="21" r="5" fill="#2a383e"/><circle cx="37" cy="21" r="5" fill="#2a383e"/></svg>';
 const trophy='<svg viewBox="0 0 40 30" aria-hidden="true"><path d="M11 4H29V13Q29 23 20 23T11 13Z" fill="#eab43a" stroke="#ac781a"/><path d="M11 7H5V11Q5 18 12 18M29 7H35V11Q35 18 28 18" fill="none" stroke="#c18c24" stroke-width="3"/><path d="M20 22V27M12 28H28" stroke="#ac781a" stroke-width="3"/><path d="M20 7L22 12 27 12 23 15 24 20 20 17 16 20 17 15 13 12 18 12Z" fill="#fff3bd"/></svg>';
+let printMode="puzzle", printExample="";
 let maze=null,route=[],wrong=-1,tries=0,level=0,hintCell=-1,won=false;
 function say(text,kind=''){$('message').textContent=text;$('feedback').classList.toggle('correct',kind==='correct');$('feedback').classList.toggle('incorrect',kind==='incorrect');}
 function clearHint(){level=0;hintCell=-1;$('hintText').hidden=true;$('hintText').textContent='';$('hint').textContent='思考提示';}
@@ -49,10 +71,40 @@ function create(){const types={basic:['addition','subtraction'],unknown:['missin
  try{const next=MazeGenerator.generate({size:Number($('size').value),max:Number($('max').value),difficulty:$('difficulty').value,...(types?{types}:{})});if(!MazeGenerator.validate(next).valid)throw Error('迷宫验证失败');
  // Example must not reuse any mathematical relation already on the board.
  const used=new Set(next.cells.filter(Boolean).map(q=>q.key));let example;try{example=MathGenerator.generate(next.target,{max:next.max,used});}catch(e){example=null;}
- maze=next;$('target').textContent=maze.target;$('example').textContent=example?`${example.text}，方框里填 ${maze.target}，就能通过！`:`如果一个方框的答案是 ${maze.target}，就可以驶入。`;reset();}
+ maze=next;$('printPuzzle').disabled=false;$('printAnswer').disabled=false;$('target').textContent=maze.target;$('example').textContent=example?`${example.text}，方框里填 ${maze.target}，就能通过！`:`如果一个方框的答案是 ${maze.target}，就可以驶入。`;printExample=$('example').textContent;reset();}
  catch(e){$('error').hidden=false;$('error').textContent='暂时无法生成：'+e.message+'。可以扩大算术范围或缩小迷宫。';if(!maze)say('请调整家长设置后再试。');}}
  $('new').addEventListener('click',create);$('restart').addEventListener('click',()=>{if(maze)reset();});$('back').addEventListener('click',()=>{if(maze&&!won&&route.length>1)move(route.at(-2));});$('hint').addEventListener('click',()=>{if(!maze||won)return;const at=route.at(-1);if(level===0){hintCell=wrong>=0?wrong:MazeGenerator.neighbors(at,maze.size).find(i=>!route.includes(i)&&maze.cells[i]);level=1;}else level++;
  const q=maze.cells[hintCell];let text;if(!q)text='试着原路返回，看看有没有其他分岔。';else if(level===1)text=`看看 ${q.text}：${q.hint}`;else text=`${q.text} 中的方框是 ${q.answer}。${q.answer===maze.target?'这个格子可以走。':'它不是通行密码，试试其他格子。'}`;$('hintText').textContent=text;$('hintText').hidden=false;$('hint').textContent=level===1?'再提示一次':'思考提示';});
+
+// Build fresh print content from the same immutable maze data, never from the colored game board.
+function buildPrint(){
+ const area=$('printArea');area.replaceChildren();if(!maze){area.textContent='请先生成迷宫，再打印。';return;}
+ const answer=printMode==='answer';
+ const el=(tag,cls,txt)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined)n.textContent=txt;return n;};
+ const sheet=el('section','print-sheet');const head=el('div','print-head');const title=el('div');title.append(el('div','print-brand','MATH ADVENTURE / 数字峡谷'),el('h1','',answer?'冠军赛车挑战 · 家长答案':'冠军赛车挑战'));head.append(title);
+ const target=el('div','print-target','通行密码');target.append(el('strong','',String(maze.target)));head.append(target);sheet.append(head);
+ if(!answer)sheet.append(el('div','print-name','姓名：__________________    日期：__________________'));
+ sheet.append(el('p','print-rule',answer?'带步骤编号的实线格为唯一通关路线；虚线格的计算也正确，但属于死路。':'从赛车出发，只经过方框答案等于通行密码的格子。每次只能上下左右移动一格。用笔画出路线，到达奖杯！'));
+ if(!answer)sheet.append(el('p','print-example','出发前练一练：'+printExample+' 答对也可能遇到死路，可以原路返回。'));
+ const grid=el('div','print-grid');grid.dataset.size=maze.size;grid.style.gridTemplateColumns=`repeat(${maze.size},minmax(0,1fr))`;
+ maze.cells.forEach((q,i)=>{
+ const cell=el('div','print-cell');cell.dataset.cell=i;const step=maze.solution.indexOf(i);if(answer&&step>=0)cell.classList.add('solution');else if(answer&&maze.deadEnds.includes(i))cell.classList.add('dead-end');
+ if(i===maze.start||i===maze.end){const mark=el('div','print-mark');mark.innerHTML=(i===maze.start?car:trophy);mark.append(document.createTextNode(i===maze.start?'起点':'终点'));cell.append(mark);}
+ if(answer&&step>=0)cell.append(el('span','print-order',`步骤 ${step}`));
+ if(q){cell.append(el('span','print-equation',q.text));if(answer)cell.append(el('span','print-answer',`答案：${q.answer}`));}
+ else if(!answer)cell.append(el('span','','出发'));
+ grid.append(cell);});sheet.append(grid);
+ sheet.append(el('p','print-foot',answer?'步骤 0 为起点。按编号顺序连线即可到达奖杯。虚线格不是错误答案，请引导孩子原路返回。':'到达奖杯后，给自己画三颗星： ☆ ☆ ☆'));
+ // Same fingerprint on puzzle and answer pages helps parents match them after printing.
+ let hash=2166136261;for(const c of JSON.stringify([maze.target,maze.size,maze.cells.map(q=>q&&q.text)])){hash=Math.imul(hash^c.charCodeAt(0),16777619);}
+ sheet.append(el('p','print-id',`关卡编号：${(hash>>>0).toString(16).toUpperCase().padStart(8,'0')} · ${maze.size} × ${maze.size} · ${maze.max} 以内`));area.append(sheet);
+}
+function printCurrent(mode){if(!maze)return;printMode=mode;buildPrint();window.print();}
+$('printPuzzle').addEventListener('click',()=>printCurrent('puzzle'));
+$('printAnswer').addEventListener('click',()=>printCurrent('answer'));
+window.addEventListener('beforeprint',buildPrint);
+window.addEventListener('afterprint',()=>{printMode='puzzle';$('printArea').replaceChildren();});
+
  if(typeof MathGenerator==='undefined'||typeof MazeGenerator==='undefined'){say('生成器没有加载成功。请检查三个文件是否位于同一目录。');$('new').disabled=true;$('restart').disabled=true;$('hint').disabled=true;$('back').disabled=true;}else create();
 })();
 </script>
