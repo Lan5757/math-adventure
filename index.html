@@ -1,191 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Math Adventure | 数学冒险乐园</title>
-  <style>
-    :root {
-      --red: #ed493f;
-      --ink: #29334b;
-      --cream: #fff9ef;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: "Microsoft YaHei", "PingFang SC",
-                   system-ui, sans-serif;
-      background: var(--cream);
-      color: var(--ink);
-    }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 7%;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .brand { font-size: 22px; font-weight: 900; }
-    a { color: inherit; text-decoration: none; }
-    .github {
-      background: white;
-      border: 2px solid #eee2d2;
-      border-radius: 14px;
-      padding: 10px 18px;
-      font-weight: bold;
-    }
-    .hero {
-      max-width: 1100px;
-      margin: 25px auto;
-      padding: 75px 30px;
-      border-radius: 32px;
-      text-align: center;
-      background: linear-gradient(135deg, #ff6655, #db353e);
-      color: white;
-      box-shadow: 0 15px 40px #e74e3b25;
-    }
-    .tag {
-      display: inline-block;
-      background: #ffffff30;
-      padding: 9px 18px;
-      border-radius: 30px;
-      font-size: 14px;
-    }
-    h1 {
-      font-size: clamp(35px, 6vw, 62px);
-      margin: 26px 0 18px;
-      line-height: 1.25;
-    }
-    .hero p {
-      font-size: 18px;
-      line-height: 1.8;
-      opacity: .95;
-    }
-    .button {
-      display: inline-block;
-      background: white;
-      color: #dd3c38;
-      border-radius: 15px;
-      padding: 15px 28px;
-      margin-top: 20px;
-      font-weight: 800;
-    }
-    section {
-      max-width: 1100px;
-      margin: 65px auto;
-      padding: 0 20px;
-    }
-    h2 { font-size: 29px; margin-bottom: 10px; }
-    .subtitle { color: #777d89; line-height: 1.7; }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 30px;
-    }
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 24px;
-      border: 2px solid #f1e8dc;
-    }
-    .emoji { font-size: 55px; }
-    .card h3 { font-size: 22px; }
-    .card p { color: #697080; line-height: 1.7; }
-    .status {
-      display: inline-block;
-      background: #fff1dc;
-      color: #986117;
-      border-radius: 20px;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: bold;
-    }
-    .roadmap {
-      background: white;
-      border-radius: 24px;
-      padding: 30px;
-      line-height: 2.5;
-    }
-    footer {
-      text-align: center;
-      padding: 45px 20px;
-      color: #888;
-    }
-    @media (max-width: 700px) {
-      header { padding: 15px 5%; }
-      .brand { font-size: 17px; }
-      .hero { margin: 12px; padding: 55px 18px; }
-      .cards { grid-template-columns: 1fr; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Math Adventure | 数学冒险乐园</title>
+<style>
+:root{--red:#c93632;--ink:#29334b;--cream:#fff9ef;--muted:#626977;--line:#e9ddcd}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;line-height:1.65}a{color:inherit}a:focus-visible{outline:3px solid #204d8c;outline-offset:4px}header,main,footer{max-width:1100px;margin:auto}header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px}.brand{font-size:21px;font-weight:900;text-decoration:none}.github{background:white;border:1px solid var(--line);border-radius:12px;padding:8px 15px;font-weight:700;text-decoration:none}.hero{margin:10px 20px 0;padding:55px 25px;background:linear-gradient(135deg,#dc4739,#b72c36);border-radius:28px;text-align:center;color:white}.tag{display:inline-block;border:1px solid #ffffff80;border-radius:24px;padding:4px 14px;font-size:14px}h1{font-size:clamp(32px,6vw,58px);line-height:1.22;margin:19px 0}h2{font-size:26px;line-height:1.35;margin:0 0 10px}h3{font-size:21px;margin:8px 0}.hero p{margin:0 auto 20px;max-width:600px;font-size:17px}.btn{display:inline-block;text-decoration:none;border-radius:12px;padding:13px 24px;font-weight:800;background:var(--red);color:white}.hero .btn{background:#fff;color:#a72c2b}.section{margin:42px 20px}.subtitle{color:var(--muted);margin:0 0 18px}.games{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{background:white;padding:24px;border:1px solid var(--line);border-radius:20px;display:flex;flex-direction:column;align-items:flex-start}.card.live{border:2px solid #d89b87}.symbol{font-size:42px;line-height:1.25}.pill{font-size:13px;font-weight:700;border-radius:16px;background:#f3eee7;color:#6e6254;padding:4px 10px}.pill.live{background:#e4efdc;color:#305e37}.card p{color:var(--muted);margin:12px 0 16px}.card .btn{margin-top:auto}.facts{font-size:14px;color:var(--muted);margin:0 0 18px;padding-left:19px}.guide{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.step,.roadmap{background:white;border:1px solid var(--line);border-radius:16px;padding:20px}.step strong{display:block;margin-bottom:5px}.step p{margin:0;color:var(--muted);font-size:15px}.roadmap ul{margin:0;padding-left:20px}.roadmap li+li{margin-top:7px}footer{text-align:center;color:var(--muted);font-size:14px;padding:12px 20px 35px}footer a{color:#9d302a}@media(max-width:740px){.games,.guide{grid-template-columns:1fr}.hero{margin:6px 12px 0;padding:40px 18px}.section{margin:30px 14px}header{padding:14px}.brand{font-size:17px}.github{padding:6px 10px}}
+</style>
 </head>
 <body>
-  <header>
-    <div class="brand">🧩 Math Adventure</div>
-    <a class="github"
-       href="https://github.com/Lan5757/math-adventure">
-      GitHub ↗
-    </a>
-  </header>
-
-  <main>
-    <div class="hero">
-      <span class="tag">✨ 开源儿童数学游戏项目</span>
-      <h1>让数学学习<br>成为一场冒险！</h1>
-      <p>
-        从数字迷宫到赛车挑战，从寻宝探险到逻辑解谜。<br>
-        为孩子创造好玩、有趣、适合自己的数学游戏。
-      </p>
-      <a class="button" href="#games">探索游戏计划 ↓</a>
-    </div>
-
-    <section id="games">
-      <h2>🎮 即将推出的数学冒险</h2>
-      <p class="subtitle">
-        我们将从第一个数字迷宫开始，
-        一步步开发更多有趣的游戏。
-      </p>
-      <div class="cards">
-        <article class="card">
-          <div class="emoji">🔢</div>
-          <h3>数字迷宫</h3>
-          <span class="status">V1.0 · 开发中</span>
-          <p>破解数学谜题，寻找通往终点的路线。</p>
-        </article>
-        <article class="card">
-          <div class="emoji">🏎️</div>
-          <h3>赛车冒险</h3>
-          <span class="status">V1.1 · 计划中</span>
-          <p>完成数学挑战，让赛车冲向终点！</p>
-        </article>
-        <article class="card">
-          <div class="emoji">🗺️</div>
-          <h3>寻宝探险</h3>
-          <span class="status">V1.2 · 计划中</span>
-          <p>解开数字密码，发现隐藏的宝藏。</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="roadmap">
-      <h2>🚀 我们的开发路线</h2>
-      <div class="roadmap">
-        ✅ 创建 GitHub 仓库<br>
-        ✅ 编写项目 README<br>
-        🚧 V1.0 数字迷宫<br>
-        ⏳ V1.1 赛车冒险<br>
-        ⏳ V1.2 寻宝探险<br>
-        ⏳ V2.0 通用数学游戏生成引擎
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    Made with ❤️ for curious young minds.<br>
-    Math Adventure · Open Source Project
-  </footer>
+<header><a class="brand" href="./index.html">🧩 Math Adventure</a><a class="github" href="https://github.com/Lan5757/math-adventure">GitHub ↗</a></header>
+<main>
+<section class="hero" aria-labelledby="headline"><span class="tag">儿童数学游戏 · 试玩版</span><h1 id="headline">让数学学习<br>成为一场冒险！</h1><p>开着赛车解开数字密码，沿着正确的路线前进，赢得冠军奖杯。可以在网页上玩，也可以打印出来慢慢探索。</p><a class="btn" href="./maze.html">🏎️ 开始数字赛车挑战</a></section>
+<section class="section" id="games"><h2>选择你的数学冒险</h2><p class="subtitle">第一款游戏已经可以试玩，其他玩法仍在计划中。</p><div class="games">
+<article class="card live"><div class="symbol" aria-hidden="true">🏎️</div><h3>冠军赛车挑战</h3><span class="pill live">可试玩</span><p>寻找答案等于通行密码的格子，穿越迷宫，到达终点。</p><ul class="facts"><li>20、50、100 以内加减法</li><li>未知数、随机关卡和分级提示</li><li>4×4 至 6×6，支持 A4 打印与家长答案</li></ul><a class="btn" href="./maze.html">开始游戏 →</a></article>
+<article class="card"><div class="symbol" aria-hidden="true">🗺️</div><h3>寻宝探险</h3><span class="pill">计划中</span><p>通过数学线索探索藏宝地图，找到隐藏的黄金宝箱。</p></article>
+<article class="card"><div class="symbol" aria-hidden="true">🔐</div><h3>数字解谜</h3><span class="pill">计划中</span><p>利用加减法和未知数破解密码，解锁新的数学挑战。</p></article>
+</div></section>
+<section class="section"><h2>家长使用指南</h2><div class="guide"><div class="step"><strong>01 · 选择难度</strong><p>进入赛车挑战，在家长设置里选择数学范围、题型和迷宫大小。</p></div><div class="step"><strong>02 · 开始冒险</strong><p>生成新迷宫，跟着示范题学习规则，计算相邻格子的答案。</p></div><div class="step"><strong>03 · 在线玩或打印</strong><p>在线闯关，或在游戏页面打印当前迷宫及对应的家长答案。</p></div></div></section>
+<section class="section"><h2>项目进度</h2><div class="roadmap"><ul><li>已实现：随机算术题与迷宫、网页互动、提示、A4 打印与答案。</li><li>当前：V1.0 试玩与测试，尚未正式发布。</li><li>接下来：自动化测试、体验优化，以及逐步扩展新玩法。</li></ul></div></section>
+</main>
+<footer>Math Adventure · 数学冒险乐园<br>初期版本无需儿童账号。欢迎通过 <a href="https://github.com/Lan5757/math-adventure/issues">GitHub Issues</a> 提出建议。</footer>
 </body>
 </html>
